@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anotações da Aula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #fdfcf7;
+    --line: #cdd9ea;
+    --margin: #e08a8a;
+    --ink: #2c3a5e;
+    --ink-soft: #5b6786;
+    --pen: #b1443a;
+    --pen-dark: #8f342c;
+    --hole: #e9e4d6;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: #dfe6ee;
+    background-image:
+      radial-gradient(ellipse at 20% -10%, rgba(255,255,255,.5), transparent 60%);
+    min-height:100vh;
+    font-family:'Inter', sans-serif;
+    color: var(--ink);
+    display:flex;
+    justify-content:center;
+    padding: 40px 16px 80px;
+  }
+
+  .page{
+    position:relative;
+    width:100%;
+    max-width: 720px;
+    background:
+      repeating-linear-gradient(
+        var(--paper),
+        var(--paper) 35px,
+        var(--line) 36px
+      );
+    background-color: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -20px rgba(30,40,70,.35), 0 2px 0 rgba(0,0,0,.04);
+    padding: 56px 44px 56px 76px;
+    transform: rotate(-0.35deg);
+  }
+
+  .margin-rule{
+    position:absolute;
+    top:0; bottom:0;
+    left: 52px;
+    width:2px;
+    background: var(--margin);
+    opacity:.55;
+  }
+
+  .holes{
+    position:absolute;
+    left: 22px;
+    top: 60px;
+    display:flex;
+    flex-direction:column;
+    gap: 90px;
+  }
+  .holes span{
+    width: 14px; height:14px;
+    border-radius:50%;
+    background: var(--hole);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.15);
+    display:block;
+  }
+
+  header{ margin-bottom: 30px; }
+
+  .eyebrow-doodle{
+    font-family:'Caveat', cursive;
+    font-size: 1.15rem;
+    color: var(--pen);
+    transform: rotate(-2deg);
+    display:inline-block;
+    margin-bottom: 2px;
+  }
+
+  h1{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size: 3.1rem;
+    line-height: 0.95;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+
+  header p{
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .surprise{
+    margin: 30px 0 38px;
+    display:flex;
+    align-items:center;
+    gap: 16px;
+  }
+
+  .surprise-btn{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--pen);
+    border: none;
+    padding: 12px 26px 14px;
+    border-radius: 6px;
+    cursor:pointer;
+    box-shadow: 0 4px 0 var(--pen-dark);
+    transform: rotate(-1deg);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .surprise-btn:hover{ transform: translateY(-2px) rotate(-1deg); }
+  .surprise-btn:active{
+    transform: translateY(2px) rotate(-1deg);
+    box-shadow: 0 2px 0 var(--pen-dark);
+  }
+  .surprise-btn:focus-visible{
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  .surprise-note{
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  ul.list{
+    list-style:none;
+    margin:0; padding:0;
+  }
+
+  .entry{
+    padding: 16px 0;
+    border-bottom: 1px dashed rgba(44,58,94,.18);
+  }
+  .entry:last-child{ border-bottom:none; }
+
+  .entry a{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+  }
+
+  .entry-title{
+    font-family:'Caveat', cursive;
+    font-weight:600;
+    font-size: 1.65rem;
+    color: var(--ink);
+  }
+
+  .entry-title .arrow{
+    color: var(--pen);
+  }
+
+  .entry-desc{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  .entry:hover .entry-title{ color: var(--pen); }
+
+  footer{
+    margin-top: 40px;
+    font-family:'Caveat', cursive;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    transform: rotate(-1deg);
+  }
+
+  @media (max-width: 560px){
+    .page{ padding: 44px 20px 44px 56px; }
+    .margin-rule{ left: 36px; }
+    .holes{ left: 14px; gap: 70px; }
+    h1{ font-size: 2.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .surprise-btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="holes">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="margin-rule"></div>
+
+  <header>
+    <span class="eyebrow-doodle">jogos divertidos</span>
+    <h1>Anotações</h1>
+    <p>Uma lista de sites pra abrir quando ficar no tédio.</p>
+  </header>
+
+  <div class="surprise">
+    <button class="surprise-btn" id="randomBtn" type="button">me tira daqui</button>
+    <span class="surprise-note">abre um site qualquer da lista</span>
+  </div>
+
+  <ul class="list" id="list">
+    <li class="entry">
+      <a href="https://rabisco.net/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Distrito Rabisco</div>
+        <div class="entry-desc">Desenho e tiroteio multiplayer num caderno. Simples, caótico e divertido.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://lessgames.com/songless" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Songless</div>
+        <div class="entry-desc">Ouve um trechinho da música e tenta adivinhar qual é antes do tempo acabar.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://lostgamer.io/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Lostgamer</div>
+        <div class="entry-desc">Tipo GeoGuessr, mas dentro dos seus jogos favoritos. Descubra onde você está.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://magnitudle.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Magnitudle</div>
+        <div class="entry-desc">Chuta tamanhos e números do mundo real. Tem modo Fermi pra quem curte estimar.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://g1.globo.com/jogos/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> G1 Jogos</div>
+        <div class="entry-desc">Coleção de passatempos diários — palavras e outros quebra-cabeças rápidos.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://oglobo.globo.com/jogos/palavras-cruzadas/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Palavras Cruzadas (O Globo)</div>
+        <div class="entry-desc">A cruzadinha clássica do jornal, online.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://term.ooo/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Termo</div>
+        <div class="entry-desc">O Wordle brasileiro. Cinco letras, seis tentativas.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://contexto.me/pt/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Contexto</div>
+        <div class="entry-desc">Descubra a palavra secreta pelo significado, não pelas letras.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://www.geoguessr.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> GeoGuessr</div>
+        <div class="entry-desc">Cai de paraquedas no Street View e descobre onde está no mundo.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://geotastic.net/home" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Geotastic</div>
+        <div class="entry-desc">Outro jogo de localização, com mapas e imagens de lugares reais.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://bouncybasketball.gitlab.io/#" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Bouncy Basketball</div>
+        <div class="entry-desc">Basquete arcade rapidinho, direto no navegador.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://theuselessweb.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> The Useless Web</div>
+        <div class="entry-desc">Clica e cai em uma página aleatória, estranha e sem propósito nenhum.</div>
+      </a>
+    </li>
+  </ul>
+
+  <footer>bons estudos ✎</footer>
+</div>
+
+<script>
+  const links = Array.from(document.querySelectorAll('#list a')).map(a => a.href);
+  document.getElementById('randomBtn').addEventListener('click', () => {
+    const pick = links[Math.floor(Math.random() * links.length)];
+    window.open(pick, '_blank', 'noopener');
+  });
+</script>
+
+</body>
+</html>
