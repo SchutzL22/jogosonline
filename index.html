@@ -185,6 +185,14 @@
     transform: rotate(-1deg);
   }
 
+
+  .pager{ margin-top: 28px; font-family:'Caveat', cursive; font-size:1.4rem; text-align:right; }
+  .pager a{ color: var(--pen); text-decoration:none; }
+  .pager a:hover{ text-decoration:underline; }
+  .pager a.secret{ color: var(--paper); }
+  .pager a.secret:hover{ text-decoration:none; }
+  .pg[hidden]{ display:none; }
+
   @media (max-width: 560px){
     .page{ padding: 44px 20px 44px 56px; }
     .margin-rule{ left: 36px; }
@@ -213,38 +221,15 @@
 
   <div class="surprise">
     <button class="surprise-btn" id="randomBtn" type="button">me tira daqui</button>
-    <span class="surprise-note">abre um site qualquer da lista</span>
+    <span class="surprise-note">abre um site qualquer desta página</span>
   </div>
 
-  <ul class="list" id="list">
+  <section class="pg" data-page="1">
+  <ul class="list">
     <li class="entry">
-      <a href="https://rabisco.net/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Distrito Rabisco</div>
-        <div class="entry-desc">Desenho e tiroteio multiplayer num caderno. Simples, caótico e divertido.</div>
-      </a>
-    </li>
-    <li class="entry">
-      <a href="https://lessgames.com/songless" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Songless</div>
-        <div class="entry-desc">Ouve um trechinho da música e tenta adivinhar qual é antes do tempo acabar.</div>
-      </a>
-    </li>
-    <li class="entry">
-      <a href="https://lostgamer.io/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Lostgamer</div>
-        <div class="entry-desc">Tipo GeoGuessr, mas dentro dos seus jogos favoritos. Descubra onde você está.</div>
-      </a>
-    </li>
-    <li class="entry">
-      <a href="https://magnitudle.com/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Magnitudle</div>
-        <div class="entry-desc">Chuta tamanhos e números do mundo real. Tem modo Fermi pra quem curte estimar.</div>
-      </a>
-    </li>
-    <li class="entry">
-      <a href="https://g1.globo.com/jogos/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> G1 Jogos</div>
-        <div class="entry-desc">Coleção de passatempos diários — palavras e outros quebra-cabeças rápidos.</div>
+      <a href="https://term.ooo/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Termo</div>
+        <div class="entry-desc">O Wordle brasileiro. Cinco letras, seis tentativas.</div>
       </a>
     </li>
     <li class="entry">
@@ -254,27 +239,21 @@
       </a>
     </li>
     <li class="entry">
-      <a href="https://term.ooo/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Termo</div>
-        <div class="entry-desc">O Wordle brasileiro. Cinco letras, seis tentativas.</div>
-      </a>
-    </li>
-    <li class="entry">
       <a href="https://contexto.me/pt/" target="_blank" rel="noopener">
         <div class="entry-title"><span class="arrow">→</span> Contexto</div>
         <div class="entry-desc">Descubra a palavra secreta pelo significado, não pelas letras.</div>
       </a>
     </li>
     <li class="entry">
-      <a href="https://www.geoguessr.com/" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> GeoGuessr</div>
-        <div class="entry-desc">Cai de paraquedas no Street View e descobre onde está no mundo.</div>
+      <a href="https://g1.globo.com/jogos/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> G1 Jogos</div>
+        <div class="entry-desc">Coleção de passatempos diários — palavras e outros quebra-cabeças rápidos.</div>
       </a>
     </li>
     <li class="entry">
-      <a href="https://geotastic.net/home" target="_blank" rel="noopener">
-        <div class="entry-title"><span class="arrow">→</span> Geotastic</div>
-        <div class="entry-desc">Outro jogo de localização, com mapas e imagens de lugares reais.</div>
+      <a href="https://magnitudle.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Magnitudle</div>
+        <div class="entry-desc">Chuta tamanhos e números do mundo real. Tem modo Fermi pra quem curte estimar.</div>
       </a>
     </li>
     <li class="entry">
@@ -290,15 +269,83 @@
       </a>
     </li>
   </ul>
+  <div class="pager"><a href="#" class="next" data-go="2">próxima página →</a></div>
+  </section>
+  <section class="pg" data-page="2" hidden>
+  <ul class="list">
+    <li class="entry">
+      <a href="https://geotastic.net/home" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Geotastic</div>
+        <div class="entry-desc">Outro jogo de localização, com mapas e imagens de lugares reais.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://lostgamer.io/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Lostgamer</div>
+        <div class="entry-desc">Tipo GeoGuessr, mas dentro dos seus jogos favoritos. Descubra onde você está.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://www.geoguessr.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> GeoGuessr</div>
+        <div class="entry-desc">Cai de paraquedas no Street View e descobre onde está no mundo.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://putt.day/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Putt Day</div>
+        <div class="entry-desc">Minigolfe no navegador. Uma tacada, um buraco, muita paciência.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://rabisco.net/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Distrito Rabisco</div>
+        <div class="entry-desc">Desenho e tiroteio multiplayer num caderno. Simples, caótico e divertido.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://linkedin-or-interpol.com/" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> LinkedIn or Interpol</div>
+        <div class="entry-desc">Esse perfil é de um executivo do LinkedIn ou de um procurado da Interpol? Chuta.</div>
+      </a>
+    </li>
+    <li class="entry">
+      <a href="https://lessgames.com/songless" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Songless</div>
+        <div class="entry-desc">Ouve um trechinho da música e tenta adivinhar qual é antes do tempo acabar.</div>
+      </a>
+    </li>
+  </ul>
+  <div class="pager"><a href="#" class="next secret" data-go="3" aria-label="página oculta">próxima página →</a></div>
+  </section>
+  <section class="pg" data-page="3" hidden>
+  <ul class="list">
+    <li class="entry">
+      <a href="https://www.rule34dle.org/pt" target="_blank" rel="noopener">
+        <div class="entry-title"><span class="arrow">→</span> Rule34dle</div>
+        <div class="entry-desc">Jogo de adivinhação. Conteúdo adulto, só pra maiores de 18.</div>
+      </a>
+    </li>
+  </ul>
+  <div class="pager"><a href="#" class="next" data-go="2">← voltar</a></div>
+  </section>
 
   <footer>bons estudos ✎</footer>
 </div>
 
 <script>
-  const links = Array.from(document.querySelectorAll('#list a')).map(a => a.href);
+  const pages = document.querySelectorAll('.pg');
+  function show(n){
+    pages.forEach(p => p.hidden = p.dataset.page !== String(n));
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('.next').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); show(a.dataset.go);
+  }));
   document.getElementById('randomBtn').addEventListener('click', () => {
-    const pick = links[Math.floor(Math.random() * links.length)];
-    window.open(pick, '_blank', 'noopener');
+    const cur = document.querySelector('.pg:not([hidden])');
+    const links = Array.from(cur.querySelectorAll('.entry a')).map(a => a.href);
+    window.open(links[Math.floor(Math.random() * links.length)], '_blank', 'noopener');
   });
 </script>
 
